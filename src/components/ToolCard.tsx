@@ -49,7 +49,7 @@ export function ToolCard({ tool, isFavorite, onToggleFavorite, onSelect }: ToolC
           <p className="text-base font-bold text-[#1a1a1a]">{tool.primaryOutcome}</p>
         </div>
         <button 
-          className="flex-shrink-0 w-10 h-10 border-2 border-black flex items-center justify-center font-black group-hover:bg-black group-hover:text-white transition-all text-[#1a1a1a]"
+          className="flex-shrink-0 min-w-[48px] min-h-[48px] border-2 border-black flex items-center justify-center font-black group-hover:bg-black group-hover:text-white transition-all text-[#1a1a1a]"
           aria-hidden="true"
         >
           →

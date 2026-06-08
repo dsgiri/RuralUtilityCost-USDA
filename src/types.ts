@@ -20,4 +20,6 @@ export type ViewState =
   | 'favorites' 
   | 'about' 
   | 'legal'
+  | 'contact'
+  | 'not-found'
   | 'tool-view';

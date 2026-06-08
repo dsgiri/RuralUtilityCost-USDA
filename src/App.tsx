@@ -5,9 +5,13 @@ import { ToolCard } from './components/ToolCard';
 import { PaymentEstimateTool } from './components/PaymentEstimateTool';
 import { PlaceholderTool } from './components/PlaceholderTool';
 import { AboutView, LegalView } from './components/SharedViews';
+import { ContactView } from './components/ContactView';
+import { NotFoundView } from './components/NotFoundView';
+import { CookieBanner } from './components/CookieBanner';
 import { TOOLS } from './data';
 import { ViewState, Tool, Category } from './types';
 import { Search, Info } from 'lucide-react';
+import { trackEvent } from './lib/analytics';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<ViewState>('home');
@@ -39,6 +43,7 @@ export default function App() {
   };
 
   const handleNavigate = (view: ViewState) => {
+    trackEvent('page_view', { page_path: `/${view}` });
     setCurrentView(view);
     if (view !== 'tool-view') {
       setActiveTool(null);
@@ -47,6 +52,7 @@ export default function App() {
   };
 
   const selectTool = (tool: Tool) => {
+    trackEvent('click', { element: `tool_${tool.id}` });
     setActiveTool(tool);
     setCurrentView('tool-view');
     window.scrollTo(0, 0);
@@ -182,11 +188,20 @@ export default function App() {
         return <AboutView />;
       case 'legal':
         return <LegalView />;
+      case 'contact':
+        return <ContactView />;
+      case 'not-found':
+        return <NotFoundView onNavigate={handleNavigate} />;
         
       default:
-        return null;
+        return <NotFoundView onNavigate={handleNavigate} />;
     }
   };
+
+  // Track initial page load
+  useEffect(() => {
+    trackEvent('page_view', { page_path: '/home' });
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#fdfdfc] text-[#1a1a1a] font-sans flex flex-col selection:bg-[#0369a1] selection:text-white">
@@ -197,6 +212,7 @@ export default function App() {
       </main>
 
       <Footer onNavigate={handleNavigate} />
+      <CookieBanner />
       
       {/* Required style injection for scrollbars */}
       <style dangerouslySetInnerHTML={{__html: `

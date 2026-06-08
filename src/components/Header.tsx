@@ -47,10 +47,10 @@ export function Header({ currentView, onNavigate }: HeaderProps) {
             key={item.label}
             onClick={() => handleNav(item.view)}
             className={cn(
-              "text-xs font-bold uppercase tracking-widest transition-colors pb-1",
+              "text-xs font-bold uppercase tracking-widest transition-colors min-h-[48px] flex items-center",
               currentView === item.view 
-                ? "border-b-2 border-black text-black" 
-                : "text-slate-400 hover:text-black border-b-2 border-transparent"
+                ? "border-b-4 border-black text-black pt-1" 
+                : "text-slate-400 hover:text-black border-b-4 border-transparent pt-1"
             )}
           >
             {item.label}
