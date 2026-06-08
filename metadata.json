@@ -1,0 +1,6 @@
+{
+  "name": "USDA Planning Hub",
+  "description": "A practical decision-support toolkit for organizing acreage inputs, estimating program payments, and reviewing compliance benchmarks, provided by Rural Utility Cost.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
