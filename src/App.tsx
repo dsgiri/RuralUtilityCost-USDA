@@ -82,15 +82,15 @@ export default function App() {
       case 'home':
         return (
           <div className="space-y-12 animate-in fade-in duration-500">
-            <div className="flex justify-between items-end mb-8 mt-4">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-end mb-8 mt-4 gap-6">
               <div>
                 <p className="text-xs font-bold text-[#0369a1] mb-1 uppercase tracking-widest">Decision Support Tools</p>
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter">Program Planning Hub</h2>
               </div>
-              <div className="hidden sm:flex gap-4">
+              <div className="flex gap-4">
                 <button 
                   onClick={() => handleNavigate('tools')}
-                  className="px-6 py-2 border-2 border-black font-bold text-xs uppercase tracking-widest bg-white text-black hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]"
+                  className="w-full sm:w-auto px-6 py-2 border-2 border-black font-bold text-xs uppercase tracking-widest bg-white text-black hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]"
                 >
                   Explore Calculators
                 </button>

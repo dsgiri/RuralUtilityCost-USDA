@@ -43,13 +43,13 @@ export function ToolCard({ tool, isFavorite, onToggleFavorite, onSelect }: ToolC
         {tool.description}
       </p>
       
-      <div className="mt-auto flex items-end justify-between">
+      <div className="mt-auto flex items-end justify-between gap-4">
         <div>
           <p className="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Primary Outcome</p>
           <p className="text-base font-bold text-[#1a1a1a]">{tool.primaryOutcome}</p>
         </div>
         <button 
-          className="w-10 h-10 border-2 border-black flex items-center justify-center font-black group-hover:bg-black group-hover:text-white transition-all text-[#1a1a1a]"
+          className="flex-shrink-0 w-10 h-10 border-2 border-black flex items-center justify-center font-black group-hover:bg-black group-hover:text-white transition-all text-[#1a1a1a]"
           aria-hidden="true"
         >
           →
